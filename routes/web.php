@@ -16,3 +16,25 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Auth::routes();
+
+// CRUD
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/data', 'SampahController@index')->middleware('auth');
+
+Route::get('/menabung', 'SampahController@create')->middleware('auth');
+
+Route::post('/data', 'SampahController@store')->middleware('auth');
+
+Route::get('/detail/{sampah}', 'SampahController@show');
+
+Route::delete('/data/{sampah}', 'SampahController@destroy');
+
+Route::get('/edit/{sampah}', 'SampahController@edit');
+
+Route::patch('/data/{sampah}','SampahController@update');
+
+
