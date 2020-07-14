@@ -29,9 +29,9 @@ class SampahController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Sampah $sampah)
     {
-        return view('menabung');
+        return view('menabung',['sampah' => $sampah]);
     }
 
     /**

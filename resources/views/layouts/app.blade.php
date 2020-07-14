@@ -198,7 +198,7 @@ label #sidebar_btn:hover{
       </center>
       <a href="{{('home')}}"><i class="fas fa-desktop"></i><span>Halaman Utama</span></a>
       <a href="{{('menabung')}}"><i class="fas fa-trash"></i><span>Mulai Buang Sampah</span></a>
-      <a href="{{('data')}}"><i class="fas fa-book"></i><span>History</span></a>
+      <a href="{{('data')}}"><i class="fas fa-book"></i><span>Entry</span></a>
       <a href="#"><i class="fas fa-info-circle"></i><span>Bantuan</span></a>
       <a href="#"><i class="fas fa-sliders-h"></i><span>Settings</span></a>
     </div>

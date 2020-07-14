@@ -29,12 +29,12 @@ Route::get('/menabung', 'SampahController@create')->middleware('auth');
 
 Route::post('/data', 'SampahController@store')->middleware('auth');
 
-Route::get('/detail/{sampah}', 'SampahController@show');
+Route::get('/detail/{sampah}', 'SampahController@show')->middleware('auth');
 
-Route::delete('/data/{sampah}', 'SampahController@destroy');
+Route::delete('/data/{sampah}', 'SampahController@destroy')->middleware('auth');
 
-Route::get('/edit/{sampah}', 'SampahController@edit');
+Route::get('/edit/{sampah}', 'SampahController@edit')->middleware('auth');
 
-Route::patch('/data/{sampah}','SampahController@update');
+Route::patch('/data/{sampah}','SampahController@update')->middleware('auth');
 
 

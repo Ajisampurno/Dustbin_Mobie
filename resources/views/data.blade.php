@@ -102,22 +102,13 @@
 					<tbody>
 						@foreach($sampahs as $sampah)
 						<tr>
-						<td>{{ $sampah -> id}}</td>
+						<td>{{ $loop -> iteration}}</td>
 						<td>{{ $sampah -> jenis}}</td>
 						<td>{{ $sampah -> berat}}</td>
 						<td>{{ $sampah -> alamat}}</td>
 						<td>{{ $sampah -> pesan}}</td>
 						<td>
 							<a href="/detail/{{$sampah -> id}}" class="badge badge-info">show</a>
-							<a href="/edit/{{$sampah -> id}}" class="badge badge-primary">edit</a>
-							<form action="/data/{{$sampah->id}}" method="post" class="d-inline">
-								@method('delete')
-								@csrf
-								<a>
-
-									<button type="submit" class="badge badge-danger">hapus</button>
-								</a>
-							  </form>
 						</td>
 					  </tr>
 					  @endforeach

@@ -126,7 +126,7 @@
     
     .content{
       margin-left: 250px;
-      background: url({{('img/logo2.png')}}) no-repeat;
+      background-color:currentColor;
       background-position: center;
       background-size: cover;
       height: 115vh;
@@ -197,8 +197,8 @@
             <h4> {{ Auth::user()->name }}</h4>
           </center>
           <a href="{{('home')}}"><i class="fas fa-desktop"></i><span>Halaman Utama</span></a>
-          <a href="{{('menabung')}}"><i class="fas fa-trash"></i><span>Mulai Buang Sampah</span></a>
-          <a href="{{('data')}}"><i class="fas fa-book"></i><span>History</span></a>
+          <a href="{{('menabung')}}"><i class="fas fa-trash"></i><span>Buang Sampah</span></a>
+          <a href="{{('data')}}"><i class="fas fa-book"></i><span>Entry</span></a>
           <a href="#"><i class="fas fa-info-circle"></i><span>Bantuan</span></a>
           <a href="#"><i class="fas fa-sliders-h"></i><span>Settings</span></a>
         </div>

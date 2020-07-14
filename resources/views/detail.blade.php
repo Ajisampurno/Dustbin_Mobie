@@ -2,6 +2,18 @@
     h5{
         color: red;
     }
+
+    svg{
+        color: white;
+    }
+
+    svg:hover{
+        color: blue;
+    }
+    span{
+        font-size: 20px;
+        color:royalblue;
+    }
 </style>
 
 @php
@@ -35,21 +47,37 @@
     <body>
         <section>
             <div class="container py-5">
-                <div class="row ">
-                    <div class="col">
+                <div class="row justify-content-center">
+                    <div class="col-md-5">
                         <div class="card text-white bg-info mb-3" style="max-width: 50rem;">
-                            <div class="card-header text-center">
-                              Detail
+                            <div class="card-header">
+                                <a href="/data" class="d-inline">
+                                    <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-arrow-left-circle" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                                    <path fill-rule="evenodd" d="M8.354 11.354a.5.5 0 0 0 0-.708L5.707 8l2.647-2.646a.5.5 0 1 0-.708-.708l-3 3a.5.5 0 0 0 0 .708l3 3a.5.5 0 0 0 .708 0z"/>
+                                    <path fill-rule="evenodd" d="M11.5 8a.5.5 0 0 0-.5-.5H6a.5.5 0 0 0 0 1h5a.5.5 0 0 0 .5-.5z"/>
+                                  </svg>
+                                </a>
+                                <h4 class="text-center">Detail</h4>
                             </div>
                             <div class="card-body bg-light text-secondary">
-                              <h5 class="card-title text-center ">Pastikan kan andam menyetujui sebelum kirim</h5>
-                              <p class="card-text">Jenis :  {{$sampah -> jenis}}</p>
-                              <p class="card-text">berat :  {{$sampah -> berat}}</p>
-                              <p class="card-text">alamat : {{$sampah -> alamat}}</p>
-                              <p class="card-text">pesan :  {{$sampah -> pesan}}</p>
-                                <p class="card-text">biaya :  {{$biaya}} </p>
-                              <a href="#" class="btn btn-success ">Kirim</a>
-                              <a href="#" class="btn btn-danger ">Hapus</a>
+                            <h5 class="card-title text-center ">Pastikan kan andam menyetujui sebelum kirim</h5>
+                            <p class="card-text"><span>Jenis:   </span>{{$sampah -> jenis}}</p>
+                            <p class="card-text"><span>Berat:   </span>{{$sampah -> berat}}</p>
+                            <p class="card-text"><span>Alamat:  </span>{{$sampah -> alamat}}</p>
+                            <p class="card-text"><span>Pesan:   </span>{{$sampah -> pesan}}</p>
+                            <p class="card-text"><span>Biaya:   </span>{{$biaya}} </p>
+                                <a href="/edit/{{$sampah -> id}}" class="btn btn-primary">edit</a>
+                                <form action="/data/{{$sampah->id}}" method="post" class="d-inline">
+                                    @method('delete')
+                                    @csrf
+                                    <a>
+    
+                                        <button type="submit" class="btn btn-danger">hapus</button>
+                                    </a>
+                                  </form>
+
+                                  <a href="" class="btn btn-success">Kirim</a>
                             </div>
                           </div>
                     </div>
