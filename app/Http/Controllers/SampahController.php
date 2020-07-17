@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\pesanan;
+use App\Mail\sendmail;
 use App\Sampah;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class SampahController extends Controller
 {
@@ -56,7 +59,7 @@ class SampahController extends Controller
      */
     public function show(Sampah $sampah)
     {
-        return view('detail',['sampah' => $sampah]);
+        return view('detail',['sampah' => $sampah]);    
     }
 
     /**
@@ -107,6 +110,12 @@ class SampahController extends Controller
     public function destroy(Sampah $sampah)
     {
         Sampah::destroy($sampah -> id);
-        return redirect('/data/')-> with('status','Data mahasiswa berhasil dihapus');
+        return redirect('/data/')-> with('status','Data berhasil dihapus');
+    }
+
+    public function send()
+    {
+        Mail::to("testing@malasngoding.com")->send(new sendmail());
+        return view('send')-> with('status','Data nerhasil di kirim');
     }
 }

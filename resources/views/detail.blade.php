@@ -75,9 +75,9 @@
     
                                         <button type="submit" class="btn btn-danger">hapus</button>
                                     </a>
-                                  </form>
-
-                                  <a href="" class="btn btn-success">Kirim</a>
+                                </form>
+                                
+                                  <a href="/send" class="btn btn-success">Kirim</a>
                             </div>
                           </div>
                     </div>

@@ -85,6 +85,12 @@
 	 
 	</nav>
 
+	@if (session('status'))
+		<div class="alert alert-success">
+			{{ session('status') }}
+		</div>
+	@endif
+
 	<div class="container pt-5">
 		<div class="row justify-content-center">
 			<div class="col-md-6">

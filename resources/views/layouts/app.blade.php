@@ -194,7 +194,6 @@ label #sidebar_btn:hover{
     <div class="sidebar">
       <center>
         <img src="{{('img/POTO_GUE.png')}}" class="profile_image" alt="">
-        <h4> {{ Auth::user()->name }}</h4>
       </center>
       <a href="{{('home')}}"><i class="fas fa-desktop"></i><span>Halaman Utama</span></a>
       <a href="{{('menabung')}}"><i class="fas fa-trash"></i><span>Mulai Buang Sampah</span></a>

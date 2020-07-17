@@ -38,3 +38,6 @@ Route::get('/edit/{sampah}', 'SampahController@edit')->middleware('auth');
 Route::patch('/data/{sampah}','SampahController@update')->middleware('auth');
 
 
+// SEND MAIL
+Route::get('/send','SampahController@send');
+
